@@ -14,25 +14,25 @@ func main() {
 
 	directory := "./output_images_madrid"
 
-	// Open the directory.
+	
 	outputDirRead, err := os.Open(directory)
 	if err != nil {
 		log.Println(err)
 	}
-	// Call Readdir to get all files.
+	
 	outputDirFiles, err := outputDirRead.Readdir(0)
 	if err != nil {
 		log.Println(err)
 	}
 	filesToAnalyse := []string{}
-	// Loop over files.
+	
 	for outputIndex := range outputDirFiles {
 		outputFileHere := outputDirFiles[outputIndex]
 
-		// Get name of file.
+		
 		outputNameHere := outputFileHere.Name()
 		filesToAnalyse = append(filesToAnalyse, outputNameHere)
-		// Print name.
+		
 	}
 	fmt.Print(len(filesToAnalyse))
 
